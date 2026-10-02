@@ -1,0 +1,33 @@
+/* Code editor buttons */
+.clear-button,
+.solution-button {
+  padding: 10px 20px;
+  margin: 12px 10px 12px 0;
+  border: none;
+  border-radius: 7px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.clear-button {
+  background: #e5e7eb;
+  color: #222;
+}
+
+.solution-button {
+  background: #243b70;
+  color: white;
+}
+
+.clear-button:hover {
+  background: #d1d5db;
+}
+
+.solution-button:hover {
+  background: #17294f;
+}
+
+/* Solution box */
+.solution-box {
+  margin-top: 25px;
+  padding: 
