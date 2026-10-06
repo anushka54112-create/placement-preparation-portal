@@ -24,7 +24,7 @@ function Signup() {
     }
 
     try {
-      const response = await fetch("http://localhost:5001/signup", {
+      const response = await fetch("hhttps://placement-preparation-portal-m4tf.onrender.com", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

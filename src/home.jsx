@@ -15,7 +15,7 @@ function Home() {
         </div>
       </nav><button
   onClick={() => {
-    fetch("http://localhost:5001/")
+    fetch("https://placement-preparation-portal-m4tf.onrender.com")
       .then((response) => response.text())
       .then((data) => alert(data))
       .catch((error) => alert("Backend not connected"));
