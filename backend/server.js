@@ -28,6 +28,7 @@ async function connectDB() {
     console.log("MongoDB connected successfully!");
   } catch (error) {
     console.error("MongoDB full error:", error);
+    throw error;
   }
 }
 
@@ -132,11 +133,19 @@ app.post("/login", async (req, res) => {
 });
 
 // Start server
-const PORT = 5001;
+async function startServer() {
+  try {
+    await connectDB();
 
-app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
-});
+    const PORT = process.env.PORT || 5001;
 
-// Connect to MongoDB
-connectDB();
+    app.listen(PORT, () => {
+      console.log(`Server running on port ${PORT}`);
+    });
+  } catch (error) {
+    console.error("Failed to start server:", error.message);
+    process.exit(1);
+  }
+}
+
+startServer();
